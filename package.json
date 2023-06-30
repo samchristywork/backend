@@ -1,0 +1,30 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "A modular web backend that I use across projects.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samchristywork/backend.git"
+  },
+  "author": "Sam Christy",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/samchristywork/backend/issues"
+  },
+  "homepage": "https://github.com/samchristywork/backend#readme",
+  "dependencies": {
+    "connect-sqlite3": "^0.9.13",
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "morgan": "^1.10.0",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
+    "sqlite3": "^5.1.6"
+  }
+}
