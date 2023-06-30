@@ -22,6 +22,9 @@ app.use(session({
 }));
 app.use(passport.authenticate('session'));
 
+// Routes
+app.use('/', require('./routes/index'));
+
 // Start server
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Listening on port ${port}.`));
