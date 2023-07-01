@@ -39,4 +39,9 @@ router.get('/get', function(_req, res, next) {
   });
 });
 
+router.use(function(err, _req, res, _next) {
+  console.error(err.stack);
+  res.status(500).send('Server Failure.');
+});
+
 module.exports = router;
