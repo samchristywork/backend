@@ -23,6 +23,7 @@ app.use(session({
 app.use(passport.authenticate('session'));
 
 // Routes
+app.use('/', require('./routes/auth'));
 app.use('/', require('./routes/index'));
 
 // Start server
