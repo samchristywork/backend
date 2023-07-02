@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css" type="text/css">
   </head>
   <body>
-    <div id="user"></div>
+    <h2>hi <%= user %></h2>
     <a href="/signup">Sign Up</a>
     <a href="/login">Login</a>
     <a href="/home">Home</a>
@@ -15,13 +15,4 @@
       <button class="logout" type="submit">Sign out</button>
     </form>
   </body>
-  <script>
-    fetch('/user')
-      .then(response => response.json())
-      .then(data => {
-        if (data.user && data.user.username) {
-          document.getElementById('user').innerHTML = data.user.username;
-        }
-      });
-  </script>
 </html>
