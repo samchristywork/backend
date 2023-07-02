@@ -15,7 +15,7 @@ router.get('/', function(req, res, _next) {
     data.user = req.user.username;
   }
 
-  ejs.renderFile(path.join(__dirname, '../public', 'index.html'), data, function(err, str) {
+  ejs.renderFile(path.join(__dirname, '../views', 'index.html'), data, function(err, str) {
     if (err) {
       console.log(err);
     }
@@ -24,15 +24,15 @@ router.get('/', function(req, res, _next) {
 });
 
 router.get('/signup', function(_req, res, _next) {
-  res.sendFile(path.join(__dirname, '../public', 'signup.html'));
+  res.sendFile(path.join(__dirname, '../views', 'signup.html'));
 });
 
 router.get('/login', function(_req, res, _next) {
-  res.sendFile(path.join(__dirname, '../public', 'login.html'));
+  res.sendFile(path.join(__dirname, '../views', 'login.html'));
 });
 
 router.get('/home', function(_req, res, _next) {
-  res.sendFile(path.join(__dirname, '../public', 'home.html'));
+  res.sendFile(path.join(__dirname, '../views', 'home.html'));
 });
 
 router.get('/set', function(req, res, next) {
