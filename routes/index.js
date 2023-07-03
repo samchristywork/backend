@@ -6,7 +6,6 @@ var ejs = require('ejs');
 var router = express.Router();
 
 router.get('/', function(req, res, _next) {
-  console.log('user: ' + JSON.stringify(req.user));
   var data = {
     user: "Not Logged In"
   };
@@ -51,6 +50,26 @@ router.get('/get', function(_req, res, next) {
   db.all('select * from foo', function(err, rows) {
     if (err) { return next(err); }
     res.send(rows);
+  });
+});
+
+router.get('/tags', function(_req, res, next) {
+  db.all('select * from tags where featured = 1', function(err, rows) {
+    if (err) { return next(err); }
+    let response = "";
+    for (let row in rows) {
+      response += `
+        <span class="tag" hx-get="/tag/${rows[row].id}" hx-trigger="click" hx-target=".content">
+          ${rows[row].name}
+        </span>
+      `;
+    }
+    response += `
+      <span class="tag" hx-get="/tag/all" hx-trigger="click" hx-target=".content">
+        all
+      </span>
+    `;
+    res.send(response);
   });
 });
 

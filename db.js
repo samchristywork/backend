@@ -17,6 +17,12 @@ db.serialize(function() {
     id integer primary key, \
     name text unique \
   )");
+
+  db.run("create table if not exists tags( \
+    id integer primary key, \
+    name text unique, \
+    featured integer \
+  )");
 });
 
 module.exports = db;
