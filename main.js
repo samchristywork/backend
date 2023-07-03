@@ -5,12 +5,14 @@ var morgan = require('morgan');
 var passport = require('passport');
 var path = require('path');
 var session = require('express-session');
+var cors = require('cors');
 
 var connect = require('connect-sqlite3')(session);
 
 // Middleware
 const app = express();
 app.use(morgan('dev'));
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
