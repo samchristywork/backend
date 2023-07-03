@@ -73,6 +73,17 @@ router.get('/tags', function(_req, res, next) {
   });
 });
 
+router.get('/featured-posts', function(_req, res, next) {
+  db.all('select * from posts where featured = 1', function(err, rows) {
+    if (err) { return next(err); }
+    let response = "";
+    for (let row in rows) {
+      response += "post";
+    }
+    res.send(response);
+  });
+});
+
 router.use(function(err, _req, res, _next) {
   console.error(err.stack);
   res.status(500).send('Server Failure.');

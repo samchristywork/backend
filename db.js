@@ -23,6 +23,14 @@ db.serialize(function() {
     name text unique, \
     featured integer \
   )");
+
+  db.run("create table if not exists posts( \
+    id integer primary key, \
+    date datetime default current_timestamp, \
+    filename text unique, \
+    title text, \
+    featured integer \
+  )");
 });
 
 module.exports = db;

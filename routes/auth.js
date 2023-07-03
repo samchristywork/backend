@@ -30,7 +30,22 @@ router.get('/user', function(req, res, next) {
 
 router.get('/login-button', function(req, res, next) {
   if (!req.user) {
+    res.send(
+`
+  <a style='float:right'>
+    <div hx-get="/login-page.html" hx-swap="outerHTML" hx-target=".content" hx-trigger="click">Log In</div>
+  </a>
+  <a style='float:right'>
+    <div hx-get="/signup-page.html" hx-swap="outerHTML" hx-target=".content" hx-trigger="click">Sign Up</div>
+  </a>
+`);
   } else {
+    res.send(
+`
+  <a style='float:right'>
+    <div hx-post="/logout">Log Out</div>
+  </a>
+`);
   }
 });
 

@@ -5,6 +5,7 @@
     <%- include("./navbar.html"); %>
 
     <div class="content">
+      <div hx-get="/featured-posts" hx-swap="outerHTML" hx-trigger="load"></div>
     </div>
 
     <%- include("./footer.html"); %>

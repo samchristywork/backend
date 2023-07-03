@@ -57,3 +57,25 @@ a {
 .social-media-icon:hover {
   filter: invert(48%) brightness(110%);
 }
+
+.post {
+  background-color: white;
+  padding: 1rem;
+  margin: 1rem auto;
+  border-radius: 1rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+}
+
+.post-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.post-date {
+  font-size: .75rem;
+  color: gray;
+}
+
+.post-content {
+  margin-top: 1rem;
+}
