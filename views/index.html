@@ -1,19 +1,12 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>TODO</title>
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="style.css" type="text/css">
-  </head>
+  <%- include("./header.html"); %>
   <body>
-    <h2>hi <%= user %></h2>
-    <a href="/signup">Sign Up</a>
-    <a href="/login">Login</a>
-    <a href="/home">Home</a>
-    <form action="/logout" method="post">
-      <button class="logout" type="submit">Sign out</button>
-    </form>
+    <%- include("./navbar.html"); %>
+
+    <div class="content">
+    </div>
+
     <%- include("./footer.html"); %>
   </body>
 </html>
