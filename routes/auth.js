@@ -22,9 +22,15 @@ passport.use(new LocalStrategy(function verify(username, password, cb) {
 
 router.get('/user', function(req, res, next) {
   if (req.user) {
-    res.json({ user: req.user });
+    res.send(req.user.username);
   } else {
-    res.json({ user: null });
+    res.send("Guest");
+  }
+});
+
+router.get('/login-button', function(req, res, next) {
+  if (!req.user) {
+  } else {
   }
 });
 
