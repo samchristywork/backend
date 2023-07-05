@@ -4,7 +4,14 @@
   <body>
     <%- include("./navbar.html"); %>
 
+    <div class=tags style="margin: 0 auto; width: 100%; text-align: center;">
+      <span style="margin: 0 auto; width: 100%; text-align: center;">
+        <span hx-get="/tags" hx-swap="outerHTML" hx-trigger="load"></span>
+      </span>
+    </div>
+
     <div class="content">
+
       <div hx-get="/featured-posts" hx-swap="outerHTML" hx-trigger="load"></div>
     </div>
 
