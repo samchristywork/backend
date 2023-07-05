@@ -73,12 +73,40 @@ router.get('/tags', function(_req, res, next) {
   });
 });
 
+router.get('/tag/:id', function(req, res, next) {
+  db.all('select * from tags where id = ?', [req.params.id], function(err, rows) {
+    if (err) { return next(err); }
+    res.send(rows);
+  });
+});
+
+function generate_tag_content(row) {
+  let filename = row.filename;
+  let title = row.title;
+  let date = row.date;
+  let post_content = `
+    <div class="post">
+      <div class="post-title">
+        <a href="/?page=posts/${filename}">
+          ${title}
+        </a>
+      </div>
+      <div class="post-date">${date}</div>
+      <div class="post-content" hx-get="/post/${filename}" hx-trigger="load"></div>
+    </div>
+    `;
+
+  return post_content;
+}
+
 router.get('/featured-posts', function(_req, res, next) {
   db.all('select * from posts where featured = 1', function(err, rows) {
     if (err) { return next(err); }
     let response = "";
     for (let row in rows) {
-      response += "post";
+      let post_content = generate_tag_content(rows[row]);
+
+      response += post_content;
     }
     res.send(response);
   });
