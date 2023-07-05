@@ -41,6 +41,21 @@ body {
   margin: 0 auto;
 }
 
+.tag {
+  background-color: #333;
+  color: #f2f2f2;
+  padding: .5rem;
+  margin: .3rem;
+  font-size: .75rem;
+  cursor: pointer;
+  border-radius: 2rem;
+}
+
+.tag:hover {
+  background-color: #ddd;
+  color: black;
+}
+
 a {
   text-decoration: none;
   color: green;
@@ -78,4 +93,12 @@ a {
 
 .post-content {
   margin-top: 1rem;
+}
+
+.tags {
+  padding-top: 0.50rem;
+  padding-bottom: 0.60rem;
+  white-space: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none;
 }
