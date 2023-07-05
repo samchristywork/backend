@@ -17,4 +17,15 @@
 
     <%- include("./footer.html"); %>
   </body>
+
+  <script>
+    var url = new URL(window.location.href);
+    var page = url.searchParams.get("page");
+
+    if (page != null) {
+      var url = page;
+      console.log(url);
+      document.querySelector(".content").innerHTML = "<div hx-get=\"" + url + "\" hx-swap=\"outerHTML\" hx-trigger=\"load\"></div>";
+    }
+  </script>
 </html>
