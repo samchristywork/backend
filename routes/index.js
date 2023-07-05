@@ -112,6 +112,19 @@ router.get('/featured-posts', function(_req, res, next) {
   });
 });
 
+router.get('/posts/:filename', function(req, res, next) {
+  db.all('select * from posts where filename = ?', [req.params.filename], function(err, rows) {
+    if (err) { return next(err); }
+    let response = "";
+    for (let row in rows) {
+      let post_content = generate_tag_content(rows[row]);
+
+      response += post_content;
+    }
+    res.send(response);
+  });
+});
+
 router.use(function(err, _req, res, _next) {
   console.error(err.stack);
   res.status(500).send('Server Failure.');
