@@ -69,7 +69,8 @@ router.post('/login/password', passport.authenticate('local', {
 router.post('/logout', function(req, res, next) {
   req.logout(function(err) {
     if (err) { return next(err); }
-    res.redirect('/');
+    res.set('hx-redirect', '/');
+    res.send();
   });
 });
 
