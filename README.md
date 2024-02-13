@@ -16,6 +16,20 @@ demonstration purposes.
 
 ## Features
 
+- Enables account creation via the user-friendly signup page for easy access
+- Incorporates enhanced Username and password authentication using `passportjs` for seamless login
+- Employs the secure `pbkdf2` algorithm from `node:crypto` for reliable hashing of user passwords
+- Utilizes an `sqlite3` database for trustworthy storage of user data
+- Leverages Express.js router system for efficient site coverage and navigation
+- Uses Express templates (ejs files) for effective website management
+- Manages site secrets with `dotenv` to ensure a secure virtual environment
+- Supports sessions with the help of express-session for user friendliness
+- Increases the accessibility through Git submodules, which include social media icons
+- Adds social media icons from font-awesome
+- Incorporates logging with morgan for efficient recording of operations
+- Uses HTMX for dynamic page updates on the client side, fostering real-time interaction
+- Includes CORs middleware for additional security for the optimal usage experience.
+
 ## Usage
 
 First, add your `SESSION_SECRET` to your `.env` file:
