@@ -2,6 +2,18 @@
 
 ## Overview
 
+This is a little web server project that I built to explore how user accounts
+and user data could be handled for a simple website. I also explored
+templating, using a file-based database, routers, user sessions and more.
+
+Despite the fact that I think what I wrote is pretty solid, I came to the
+conclusion that rolling your own auth is a bad idea, and these days I rely on
+authentication middleware that doesn't require me to manually call crypto
+algorithms.
+
+This repository is called `backend` but does include a thin frontend mostly for
+demonstration purposes.
+
 ## Features
 
 ## Usage
